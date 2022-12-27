@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: test_uri
+          uri: http://localhost:8081
+          predicates:
+            - Path=/test-api,
+          filters:
+            - RewritePath=/test-api, /test-final-api
